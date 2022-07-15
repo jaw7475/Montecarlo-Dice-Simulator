@@ -109,8 +109,8 @@ Docstring:
 
     Each game is initialized with one or more of similarly defined dice (Die objects).
     
-    By “same kind” and “similarly defined” we mean that each die in a given game has the same number of sides and associated faces, but
-    each die object may have its own weights.
+    By “same kind” and “similarly defined” we mean that each die in a given game has the same number of sides and 
+    associated faces, but each die object may have its own weights.
     
     The class has a behavior to play a game, i.e. to rolls all of the dice a given number of times.
     
@@ -149,3 +149,6 @@ show(self, stack = 'wide')
     OUTPUTS: Returns a dataframe of the results of play(). The narrow form of the dataframe will have a two-column index 
     with the roll number and the die number, and a column for the face rolled. The wide form of the dataframe will a 
     single column index with the roll number, and each die number as a column.
+
+#### Parameters
+`dice` list of dice objects in game; required for initialization
