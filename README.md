@@ -226,6 +226,7 @@ face_counts_per_roll(self):
   - montecarlo_demo.ipynb
   - montecarlo_test_results.txt
   - setup.py
+  - .gitignore
   - montecarlo/
     - \__init__.py
     - montecarlo.py
