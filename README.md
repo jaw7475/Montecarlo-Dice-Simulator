@@ -96,3 +96,56 @@ get_die(self):
     INPUTS: None
         
     OUTPUTS: Returns the dataframe created in the initializer.
+    
+#### Parameters:
+`faces` ndarray of numbers or strings; required parameter for initialization; represents faces of dice\
+`weights` ndarray of floats; probabilisitic weights that correspond to each face of the die; default = 1.0 for each\
+
+### Game
+
+Docstring:
+
+    A Game object consists of rolling of one or more dice of the same kind one or more times. 
+
+    Each game is initialized with one or more of similarly defined dice (Die objects).
+    
+    By “same kind” and “similarly defined” we mean that each die in a given game has the same number of sides and associated faces, but
+    each die object may have its own weights.
+    
+    The class has a behavior to play a game, i.e. to rolls all of the dice a given number of times.
+    
+    The class keeps the results of its most recent play. 
+    
+#### Methods
+
+```python
+__init__(self, dice):
+```
+    PURPOSE: Initializes a Game object.
+        
+    INPUTS: Takes a single parameter, a list of already instantiated similar Die objects.
+        
+    OUTPUTS: None
+    
+```python
+play(self, num_times):
+```
+    PURPOSE: Plays a game by simulating rolls of its dice a given number of times. Saves the result of the play to a 
+    private dataframe of shape N rolls by M dice.
+        
+    INPUTS: Takes an int that specifies how many times the dice should be rolled.
+        
+    OUTPUTS: None
+    
+```python
+show(self, stack = 'wide')
+```
+    PURPOSE: A method to show the user the results of the most recent play. This method  passes the private dataframe 
+    created in play() to the user.
+        
+    INPUTS: Takes a string parameter "narrow" or "wide" that determines the form that the dataframe is returned. An 
+    exception will be thrown if a different parameter is passed. Defaults to "wide"
+        
+    OUTPUTS: Returns a dataframe of the results of play(). The narrow form of the dataframe will have a two-column index 
+    with the roll number and the die number, and a column for the face rolled. The wide form of the dataframe will a 
+    single column index with the roll number, and each die number as a column.
