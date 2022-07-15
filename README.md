@@ -11,8 +11,8 @@ Author: Jake Weinberg
 2. Through the console: `pip install .`
 
 ### Importing
-1. To import entire package: `import montecarlo`
-2. To import specific classses: `from montecarlo import Die, Game, Analyzer`
+1. To import entire package: `import montecarlo.montecarlo`
+2. To import specific classses: `from montecarlo.montecarlo import Die, Game, Analyzer`
 
 ### Creating a Die
 
@@ -211,8 +211,22 @@ face_counts_per_roll(self):
     OUTPUTS: None
 
 #### Parameters
-`game` game object; required as paramenter during initialization
-`face_type` variable type of dice faces used to play the game object passed to the analyzer
-`jackpots` dataframe of all rolls in game that were jackpot results (all faces were identical)
-`combinations` dataframe with multi-indexed columns that stores all of the diffrent roll combinations from the game
-`face_counts` dataframe that shows how many of each face were rolled for each roll event in the game
+`game` game object; required as paramenter during initialization\
+`face_type` variable type of dice faces used to play the game object passed to the analyzer\
+`jackpots` dataframe of all rolls in game that were jackpot results (all faces were identical)\
+`combinations` dataframe with multi-indexed columns that stores all of the diffrent roll combinations from the game\
+`face_counts` dataframe that shows how many of each face were rolled for each roll event in the game\
+
+## Manifest
+
+- Montecarlo-Dice-Simulator/
+  - docs/
+  - LICENSE.txt
+  - README.txt
+  - montecarlo_demo.ipynb
+  - montecarlo_test_results.txt
+  - setup.py
+  - montecarlo/
+    - \__init__.py
+    - montecarlo.py
+    - montecarlo_tests.py
