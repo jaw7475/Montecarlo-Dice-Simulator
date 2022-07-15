@@ -152,3 +152,67 @@ show(self, stack = 'wide')
 
 #### Parameters
 `dice` list of dice objects in game; required for initialization
+
+### Analyzer
+
+Docstring:
+
+    An Analyzer object takes the results of a single game and computes various descriptive statistical properties about it. 
+    These propertiesresults are available as attributes of an Analyzer object. Attributes (and associated methods) include:
+
+    A face counts per roll, i.e. the number of times a given face appeared in each roll. For example, if a roll of five 
+    dice has all sixes, then the counts for this roll would be 6 for the face value '6' and 0 for the other faces.
+    
+    A jackpot count, i.e. how many times a roll resulted in all faces being the same, e.g. all one for a six-sided die.
+    
+    A combo count, i.e. how many combination types of faces were rolled and their counts.
+    
+#### Methods
+
+```python
+__init__(self, game):
+```
+    PURPOSE: Initializes an instance of an Analyzer object. At initialization time, it also infers the data type of the 
+    die faces used.
+        
+    INPUTS: Takes a game object as its input parameter.
+        
+    OUTPUTS: None
+    
+```python
+jackpot(self):
+```
+    PURPOSE: A method to compute how many times the game resulted in all faces being identical. Stores the results as 
+    a dataframe of jackpot results in a public attribute, jackpots. The dataframe has the roll number as a named index.
+        
+    INPUTS: None
+        
+    OUTPUTS: Returns an integer for the number times to the user.
+    
+```python
+combo(self)
+```
+    PURPOSE: A method to compute the distinct combinations of faces rolled, along with their counts. Combinations are 
+    sorted and saved as a multi-columned index. Stores the results as a dataframe in a public attribute, combinations.
+        
+    INPUTS: None
+        
+    OUTPUTS: None
+
+```python
+face_counts_per_roll(self):
+```
+    PURPOSE: A method to compute how many times a given face is rolled in each event. Stores the results as a dataframe 
+    in a public attribute. The dataframe has an index of the roll number and face values as columns (i.e. it is in 
+    wide format).
+        
+    INPUTS: None
+        
+    OUTPUTS: None
+
+#### Parameters
+`game` game object; required as paramenter during initialization
+`face_type` variable type of dice faces used to play the game object passed to the analyzer
+`jackpots` dataframe of all rolls in game that were jackpot results (all faces were identical)
+`combinations` dataframe with multi-indexed columns that stores all of the diffrent roll combinations from the game
+`face_counts` dataframe that shows how many of each face were rolled for each roll event in the game
