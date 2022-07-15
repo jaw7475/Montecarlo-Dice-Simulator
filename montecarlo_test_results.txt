@@ -1,0 +1,21 @@
+test_01_change_weight (__main__.MontecarloTestSuite)
+PURPOSE: This function tests the change_weight() function of the montecarlo.Die class by testing that both the ... ok
+test_02_die_roll (__main__.MontecarloTestSuite)
+PURPOSE: This function tests the die_roll() function of the montecarlo.Die class by testing that the length of the list ... ok
+test_03_get_die (__main__.MontecarloTestSuite)
+PURPOSE: This function tests the get_die() function of the montecarlo.Die class by testing that select observations in ... ok
+test_04_play (__main__.MontecarloTestSuite)
+PURPOSE: This function tests the play() function of the montecarlo.Game class by testing that the size of the ... ok
+test_05_show (__main__.MontecarloTestSuite)
+PURPOSE: This function tests the show() function of the montecarlo.Game class by testing that the size of the dataframe ... ok
+test_06_jackpot (__main__.MontecarloTestSuite)
+PURPOSE: This function tests the jackpot() function of the montecarlo.Analyzer class by testing that the integer returned ... ok
+test_07_combos (__main__.MontecarloTestSuite)
+PURPOSE: This function tests the combos() function of the montecarlo.Analyzer class by testing that the number of combinations ... ok
+test_08_face_counts_per_roll (__main__.MontecarloTestSuite)
+PURPOSE: This function tests the face_counts_per_roll() function of the montecarlo.Analyzer class by testing that select ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.251s
+
+OK
