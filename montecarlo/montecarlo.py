@@ -82,8 +82,8 @@ class Game:
 
     Each game is initialized with one or more of similarly defined dice (Die objects).
     
-    By “same kind” and “similarly defined” we mean that each die in a given game has the same number of sides and associated faces, but each die
-    object may have its own weights.
+    By “same kind” and “similarly defined” we mean that each die in a given game has the same number of sides and 
+    associated faces, but each die object may have its own weights.
     
     The class has a behavior to play a game, i.e. to rolls all of the dice a given number of times.
     
@@ -102,8 +102,8 @@ class Game:
         
     def play(self, num_times):
         '''
-        PURPOSE: Plays a game by simulating rolls of its dice a given number of times. Saves the result of the play to a private dataframe of
-        shape N rolls by M dice.
+        PURPOSE: Plays a game by simulating rolls of its dice a given number of times. Saves the result of the play to a 
+        private dataframe of shape N rolls by M dice.
         
         INPUTS: Takes an int that specifies how many times the dice should be rolled.
         
@@ -123,9 +123,9 @@ class Game:
         INPUTS: Takes a string parameter "narrow" or "wide" that determines the form that the dataframe is returned. An exception
         will be thrown if a different parameter is passed. Defaults to "wide"
         
-        OUTPUTS: Returns a dataframe of the results of play(). The narrow form of the dataframe will have a two-column index with the roll
-        number and the die number, and a column for the face rolled. The wide form of the dataframe will a single column index with the roll
-        number, and each die number as a column.
+        OUTPUTS: Returns a dataframe of the results of play(). The narrow form of the dataframe will have a two-column index 
+        with the roll number and the die number, and a column for the face rolled. The wide form of the dataframe will a 
+        single column index with the roll number, and each die number as a column.
         '''
         assert (stack == 'wide' or stack == 'narrow'), "Please enter narrow or wide"
         df = self._result.copy()
@@ -138,11 +138,11 @@ class Game:
         
 class Analyzer:
     '''
-    An Analyzer object takes the results of a single game and computes various descriptive statistical properties about it. These properties
-    results are available as attributes of an Analyzer object. Attributes (and associated methods) include:
+    An Analyzer object takes the results of a single game and computes various descriptive statistical properties about it. 
+    These properties results are available as attributes of an Analyzer object. Attributes (and associated methods) include:
 
-    A face counts per roll, i.e. the number of times a given face appeared in each roll. For example, if a roll of five dice has all sixes, then
-    the counts for this roll would be 6 for the face value '6' and 0 for the other faces.
+    A face counts per roll, i.e. the number of times a given face appeared in each roll. For example, if a roll of five dice 
+    has all sixes, then the counts for this roll would be 6 for the face value '6' and 0 for the other faces.
     
     A jackpot count, i.e. how many times a roll resulted in all faces being the same, e.g. all one for a six-sided die.
     
@@ -151,7 +151,8 @@ class Analyzer:
     
     def __init__(self, game):
         '''
-        PURPOSE: Initializes an instance of an Analyzer object. At initialization time, it also infers the data type of the die faces used.
+        PURPOSE: Initializes an instance of an Analyzer object. At initialization time, it also infers the data type of the 
+        die faces used.
         
         INPUTS: Takes a game object as its input parameter.
         
@@ -162,8 +163,8 @@ class Analyzer:
         
     def jackpot(self):
         '''
-        PURPOSE: A method to compute how many times the game resulted in all faces being identical. Stores the results as a dataframe of jackpot
-        results in a public attribute, jackpots. The dataframe has the roll number as a named index.
+        PURPOSE: A method to compute how many times the game resulted in all faces being identical. Stores the results as a 
+        dataframe of jackpot results in a public attribute, jackpots. The dataframe has the roll number as a named index.
         
         INPUTS: None
         
@@ -189,8 +190,8 @@ class Analyzer:
             
     def combo(self):
         '''
-        PURPOSE: A method to compute the distinct combinations of faces rolled, along with their counts. Combinations are sorted and saved 
-        as a multi-columned index. Stores the results as a dataframe in a public attribute, combinations.
+        PURPOSE: A method to compute the distinct combinations of faces rolled, along with their counts. Combinations are sorted and 
+        saved as a multi-columned index. Stores the results as a dataframe in a public attribute, combinations.
         
         INPUTS: None
         
